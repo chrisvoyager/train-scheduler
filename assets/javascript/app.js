@@ -12,10 +12,9 @@ $(document).ready(function() {
   };
 
   firebase.initializeApp(firebaseConfig);
-  firebase.analytics();
 
  
-
+  var database = firebase.database();
    
   $("#add-train-btn").on("click", function(event) {
   		event.preventDefault();
@@ -23,7 +22,7 @@ $(document).ready(function() {
 	  var trainName = $("#train-name-input").val().trim();
 	  var trainDest = $("#dest-input").val().trim();
 	  var firstTrain = $("#firstTrain-input").val().trim();
-	  var trainFreq = $("#freq-input").val().trim();
+      var trainFreq = $("#freq-input").val().trim();
 
 	  var newTrain = {
 	  	name: trainName,
